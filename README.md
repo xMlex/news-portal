@@ -9,7 +9,7 @@ News Portal
 
 index.php
 ```bash
-$ cp web/i|News Portndex-{prod,dev,test}.php web/index.php
+$ cp web/index-{prod,dev,test}.php web/index.php
 ```
 
 Db (MySQL)
