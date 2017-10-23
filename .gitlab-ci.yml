@@ -1,0 +1,48 @@
+image: "xmlex-php:latest"
+
+# Cache
+cache:
+  paths:
+    - vendor
+
+stages:
+  - test
+  - deploy
+
+deploy to production:
+  stage: deploy
+  only:
+   - master
+  environment:
+    name: production
+    url: https://demo.xmlex.ru/news-portal/web
+  script:
+    - mkdir -p ~/.ssh && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$DEPLOY_KEY")
+
+   # Db
+    - cp config/db.php.install config/db.php
+    - sed -i -- "s/{host}/$DB_HOST/g" config/db.php
+    - sed -i -- "s/{database}/$DB_NAME/g" config/db.php
+    - sed -i -- "s/{user}/$DB_USER/g" config/db.php
+    - sed -i -- "s/{password}/$DB_PASS/g" config/db.php
+
+    # Config
+    - cp web/index-prod.php web/index.php
+    - cp config/params.php.install config/params.php
+    - sed -i -- "s/{cookieValidationKey}/$cookieValidationKey/g" config/params.php
+    - sed -i -- "s/{smtp_host}/$smtp_host/g" config/params.php
+    - sed -i -- "s/{smtp_port}/$smtp_port/g" config/params.php
+    - sed -i -- "s/{smtp_username}/$smtp_username/g" config/params.php
+    - sed -i -- "s/{smtp_password}/$smtp_password/g" config/params.php
+
+
+   # Composer
+    - composer install --prefer-dist --no-dev --no-progress
+   #- php yii asset site/config/AppAssetMin.php site/asset/min.php
+   #- php yii migrate --interactive=0 --migrationPath=@modules/row/migrations
+    - php yii migrate --migrationPath=@yii/rbac/migrations --interactive=0
+    - php yii migrate --interactive=0
+    - rsync --rsh='ssh -p1' -zrpth --stats --delete-after --exclude=.git $(pwd)/ mlex@demo.xmlex.ru:/home/mlex/web/demo.xmlex.ru/public_html/news-portal
+
