@@ -223,7 +223,7 @@ class UserController extends Controller
             }
         }
 
-        return $this->redirect(['/login']);
+        return $this->redirect(['/site/login']);
     }
 
     public function actionRegistration()
