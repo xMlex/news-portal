@@ -4,13 +4,13 @@ namespace app\controllers;
 
 use app\models\forms\NewPasswordForm;
 use app\models\forms\ResetPasswordForm;
-use Yii;
 use app\models\User;
 use app\models\UsersSearch;
+use Yii;
 use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -223,7 +223,7 @@ class UserController extends Controller
             }
         }
 
-        return $this->redirect(['login']);
+        return $this->redirect(['/login']);
     }
 
     public function actionRegistration()
