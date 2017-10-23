@@ -1,11 +1,15 @@
 News Portal
 ============================
 
+# Demo
+
+[News Portal](https://demo.xmlex.ru/news-portal/web/)
+
 # Configuration
 
 index.php
 ```bash
-$ cp web/index-{prod,dev,test}.php web/index.php
+$ cp web/i|News Portndex-{prod,dev,test}.php web/index.php
 ```
 
 Db (MySQL)

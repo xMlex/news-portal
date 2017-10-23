@@ -87,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'yii\grid\ActionColumn',
                 'buttons' => [
                     'update' => function ($url, $model, $key) {
-                        return Yii::$app->user->can('updatePost', ['post' => $model]) ? Html::a(Html::icon('pencil'), ['update', 'id' => $key]) : '';
+                        return Yii::$app->user->can('updatePost', ['post' => $model]) ? Html::a(Html::icon('pencil'), ['update', 'id' => $key], ['class' => 'link-as-dialog']) : '';
                     },
                     'view' => function ($url, $model, $key) {
                         return Yii::$app->user->can('viewPost', ['post' => $model]) ? Html::a(Html::icon('eye-open'), ['view', 'id' => $key]) : '';
