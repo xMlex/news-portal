@@ -21,7 +21,7 @@ return [
         'mailer' => [
             'useFileTransport' => true,
         ],
-        'assetManager' => [            
+        'assetManager' => [
             'basePath' => __DIR__ . '/../web/assets',
         ],
         'urlManager' => [
@@ -30,7 +30,7 @@ return [
         'user' => [
             'class' => \yii\web\User::className(),
             'identityClass' => 'app\models\User',
-        ],        
+        ],
         'request' => [
             'class' => \yii\web\Request::className(),
             'cookieValidationKey' => 'test',

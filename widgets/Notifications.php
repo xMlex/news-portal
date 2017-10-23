@@ -38,7 +38,7 @@ class Notifications extends Widget
                 $postNotification->post_id,
                 $i > 0 ? 'none' : 'block',
                 $url
-                ], $this->template);
+            ], $this->template);
         }
 
         $this->view->registerJs('$(".post-notification a").click(function(e){

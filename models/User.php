@@ -3,12 +3,10 @@
 namespace app\models;
 
 use app\behaviors\UserNotification;
-use yii\base\Security;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
-use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\web\IdentityInterface;
 
@@ -68,7 +66,7 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             self::SCENARIO_DEFAULT => ['password', 'post_notification_type'],
             self::SCENARIO_CREATE => ['is_active', 'login', 'email', 'password', 'post_notification_type'],
-            self::SCENARIO_UPDATE=> ['is_active', 'password', 'post_notification_type'],
+            self::SCENARIO_UPDATE => ['is_active', 'password', 'post_notification_type'],
             self::SCENARIO_REGISTRATION => ['login', 'email', 'password'],
             self::SCENARIO_VALIDATION => ['is_active', 'is_validated'],
             self::SCENARIO_RESET_PASSWORD => ['password', 'password_reset_code'],

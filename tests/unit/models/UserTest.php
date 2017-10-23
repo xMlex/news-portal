@@ -3,11 +3,11 @@
 namespace tests\models;
 
 
+use app\models\User;
 use app\tests\fixtures\AuthAssignmentFixture;
 use app\tests\fixtures\PostFixture;
 use app\tests\fixtures\UserFixture;
 use yii\codeception\DbTestCase;
-use app\models\User;
 
 class UserTest extends DbTestCase
 {

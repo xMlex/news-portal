@@ -56,6 +56,6 @@ class LoginFormCest
             'LoginForm[password]' => 'password',
         ]);
         $I->see('Выйти (admin)');
-        $I->dontSeeElement('form#login-form');              
+        $I->dontSeeElement('form#login-form');
     }
 }

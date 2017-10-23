@@ -2,18 +2,13 @@
 
 namespace app\controllers;
 
-use app\models\forms\NewPasswordForm;
-use app\models\forms\ResetPasswordForm;
+use app\models\ContactForm;
+use app\models\LoginForm;
 use app\models\PostsSearch;
-use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
 class SiteController extends Controller
 {

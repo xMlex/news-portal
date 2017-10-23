@@ -5,8 +5,8 @@
 
 /* @var $user app\models\User */
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 $this->title = 'Подтверждение регистрации';
 $this->params['breadcrumbs'][] = $this->title;

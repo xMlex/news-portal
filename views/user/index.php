@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'convertFormat' => true,
                     'language' => 'ru',
                     'pluginOptions' => [
-                        'timePicker'=>true,
+                        'timePicker' => true,
                         'locale' => [
                             'format' => 'Y-m-d H:i'
                         ],
@@ -84,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'convertFormat' => true,
                     'language' => 'ru',
                     'pluginOptions' => [
-                        'timePicker'=>true,
+                        'timePicker' => true,
                         'locale' => [
                             'format' => 'Y-m-d H:i'
                         ],

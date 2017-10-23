@@ -1,7 +1,7 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
-$db = YII_ENV_TEST ?  require(__DIR__ . '/test_db.php') : require(__DIR__ . '/db.php');
+$db = YII_ENV_TEST ? require(__DIR__ . '/test_db.php') : require(__DIR__ . '/db.php');
 
 $config = [
     'id' => 'basic-console',

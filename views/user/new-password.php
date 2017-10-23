@@ -5,9 +5,8 @@
 
 /* @var $model app\models\forms\NewPasswordForm */
 
-use yii\captcha\Captcha;
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 $this->title = 'Восстановление пароля';
 $this->params['breadcrumbs'][] = $this->title;

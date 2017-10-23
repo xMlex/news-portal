@@ -2,10 +2,11 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
+
 /* @var $user app\models\User */
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 $this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
@@ -22,15 +23,15 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-        <?= $form->field($user, 'login')->textInput(['autofocus' => true]) ?>
-        <?= $form->field($user, 'email')->textInput() ?>
-        <?= $form->field($user, 'password')->passwordInput() ?>
+    <?= $form->field($user, 'login')->textInput(['autofocus' => true]) ?>
+    <?= $form->field($user, 'email')->textInput() ?>
+    <?= $form->field($user, 'password')->passwordInput() ?>
 
-        <div class="form-group">
-            <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Зарегистироваться', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
+    <div class="form-group">
+        <div class="col-lg-offset-1 col-lg-11">
+            <?= Html::submitButton('Зарегистироваться', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
         </div>
+    </div>
 
     <?php ActiveForm::end(); ?>
 </div>

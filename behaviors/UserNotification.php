@@ -39,7 +39,7 @@ class UserNotification extends Behavior
 
     public function beforeUpdate($event)
     {
-        if($this->owner instanceof ActiveRecord && !$this->owner->isNewRecord && $this->owner->isAttributeChanged($this->fieldPassword)){
+        if ($this->owner instanceof ActiveRecord && !$this->owner->isNewRecord && $this->owner->isAttributeChanged($this->fieldPassword)) {
             \Yii::$app->mailer->compose('password-changed', ['user' => $this->owner])
                 ->setTo($this->owner->{$this->fieldEmail})
                 ->setSubject('Изиенение пароля')

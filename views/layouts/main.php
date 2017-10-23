@@ -4,13 +4,13 @@
 
 /* @var $content string */
 
+use app\assets\AppAsset;
 use app\widgets\Alert;
 use app\widgets\Notifications;
-use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
 
 if (empty($this->title)) {
     $this->title = Yii::$app->name;
@@ -61,7 +61,7 @@ AppAsset::register($this);
                 'label' => Yii::$app->user->identity->login,
                 'items' => [
                     ['label' => 'Профиль', 'url' => ['/user/profile']],
-                    ['label' =>'Выйти (' . Yii::$app->user->identity->login . ')', 'url' => ['/site/logout']],
+                    ['label' => 'Выйти (' . Yii::$app->user->identity->login . ')', 'url' => ['/site/logout']],
                 ]
             ]
         ],
@@ -84,7 +84,8 @@ AppAsset::register($this);
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
                 </div>
                 <div class="modal-body"></div>

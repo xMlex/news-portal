@@ -4,7 +4,6 @@ namespace tests\models;
 
 use app\models\LoginForm;
 use app\tests\fixtures\UserFixture;
-use Codeception\Specify;
 use Codeception\Test\Unit;
 
 class LoginFormTest extends Unit

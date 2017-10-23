@@ -25,10 +25,10 @@ class PostNotification extends Behavior
     {
         $finsUsers = User::findActive();
 
-        foreach ($finsUsers->batch() as $rows){
-            /** @var User[] $rows*/
-            foreach ($rows as $user){
-                switch ($user->post_notification_type){
+        foreach ($finsUsers->batch() as $rows) {
+            /** @var User[] $rows */
+            foreach ($rows as $user) {
+                switch ($user->post_notification_type) {
                     case User::POST_NOTIFICATION_MESSAGE:
                         $notification = new PostNotifications();
                         $notification->user_id = $user->id;

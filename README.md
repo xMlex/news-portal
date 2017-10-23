@@ -1,3 +1,6 @@
+[![pipeline status](https://gitlab.com/the.mlex/news-portal/badges/master/pipeline.svg)](https://gitlab.com/the.mlex/news-portal/commits/master)
+
+
 News Portal
 ============================
 
