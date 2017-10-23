@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Yii::$app->user->can('updatePost', ['post' => $model]) ? Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary update-post']) : '' ?>
+        <?= Yii::$app->user->can('updatePost', ['post' => $model]) ? Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary link-as-dialog']) : '' ?>
         <?= Yii::$app->user->can('deletePost', ['post' => $model]) ? Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
