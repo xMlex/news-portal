@@ -8,6 +8,8 @@ News Portal
 
 [News Portal](https://demo.xmlex.ru/news-portal/web/)
 
+[Description](https://github.com/xMlex/news-portal/wiki)
+
 # Deploy with GitLab-CI
 see file *.gitlab-ci.yml*
 
